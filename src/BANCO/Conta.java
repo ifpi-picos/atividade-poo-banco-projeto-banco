@@ -40,10 +40,10 @@ public class Conta {
     public void Sacar(double sacar){
        if(this.getSaldo()>0){
            this.setSaldo(this.getSaldo()-sacar);
-           JOptionPane.showMessageDialog(null, "saque efetuado com sucesso");
+           System.out.println("saque efetuado com sucesso");
        }
        else{
-           JOptionPane.showMessageDialog(null, "impossivel realizar o saque");
+        System.out.println("impossivel realizar o saque");
        }
    
     } 
@@ -51,13 +51,25 @@ public class Conta {
    public void depositar(double depositar){
        if(depositar > 0){
            this.setSaldo(this.getSaldo()+ depositar);
-           JOptionPane.showMessageDialog(null, "deposito efetuado com sucesso");
+           System.out.println("deposito efetuado com sucesso");
+        
        }
        else{
-           JOptionPane.showMessageDialog(null, "impossivel realizar o deposito");
+          System.out.println("impossivel realizar o deposito");
        }
    
    }
+    public void transfere(Conta numero, double valor){
+        if(this.getSaldo ()>= valor && valor >0){
+            this.setSaldo(this.getSaldo() - valor);
+            numero.saldo = numero.saldo + valor;
+            System.out.println("tranferencia realizada com sucesso");
+            
+            
+            
+        }
+
+    }
 
 @Override
 public String toString() {

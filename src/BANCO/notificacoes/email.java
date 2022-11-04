@@ -1,11 +1,36 @@
 package BANCO.notificacoes;
 
-public class email implements Notificacao {
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
+import javax.swing.event.CaretListener;
+
+public class email implements Notificacao { 
+    Calendar calendario = Calendar.getInstance();
+     Date data = calendario.getTime();
+     DateFormat fd = DateFormat.getDateInstance(DateFormat.FULL);
+     
+     
+
+    
+    
     @Override
     public void enviarNoticacao(String operacao, double valor) {
-        // TODO Auto-generated method stub
+        System.out.println("enviando um email\n"+ operacao +  " no valor de"+ valor + "\n data" + fd.format(data));
+
+        
+    }
+
+
+
+
+    private DateFormat DateFormat() {
+        return null;
+    }
+     
+   
         
     }
     
-}
+

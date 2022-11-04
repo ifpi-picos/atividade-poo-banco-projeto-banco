@@ -8,5 +8,12 @@ public class Poupanca extends Conta {
     }
     public Double getRendimento() {
         return rendimento;
+        
+    }
+    @Override
+    public void depositar(double depositar) {
+        // TODO Auto-generated method stub
+        super.depositar(depositar);
+        this.setSaldo(this.getSaldo() * this.getRendimento());
     }
 }

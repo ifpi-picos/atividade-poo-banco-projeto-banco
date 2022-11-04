@@ -161,6 +161,7 @@ public class App {
             if ( contaDestinatario != null){
                 System.out.println("valor da transferencia");
                 Double valor = teclado.nextDouble();
+                contaRemetente.transfere(contaDestinatario,valor);
 
                 
             }
