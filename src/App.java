@@ -1,17 +1,15 @@
+import BANCO.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import BANCO.Cliente;
-import BANCO.Conta;
-import BANCO.Endereco;
-
 public class App {
     static Scanner teclado = new Scanner(System.in);
+
     static ArrayList <Conta> ContasBancarias;
     
     public static void main(String[] args) {
         
-    
         ContasBancarias = new  ArrayList<Conta>();
         operacoes();
     }
@@ -28,33 +26,34 @@ public class App {
         System.out.println("----- opção 4:  Transferir--");
         System.out.println("----- opção 5:  vê contas----- ");
         System.out.println("----- opção 6:  Sair--------");
-        
+        System.out.println("->");
+
         int operacao = teclado.nextInt() ;
         switch (operacao) {
             case 1:
             criarconta();
             break;
 
-                case 2:
-                depositar();
-                break;
+            case 2:
+            depositar();
+            break;
                 
-                    case 3:
-                    sacar();
-                    break;
+            case 3:
+            sacar();
+            break;
                     
-                        case 4:
-                        transferir();
-                        break;
+            case 4:
+            transferir();
+            break;
 
-                    case 5:
-                    vêcontas();
-                    break;
+            case 5:
+            vecontas();
+            break;
 
-                        case 6:
-                        System.out.println("obrigada por escolher nossa agência!");
-                        System.exit(0);
-                        break;
+            case 6:
+            System.out.println("obrigada por escolher nossa agência!");
+            System.exit(0);
+            break;
 
                         default:
                         System.out.println("opção invalida!");
@@ -90,14 +89,30 @@ public class App {
         Endereco endereco = new Endereco(rua, numero, rua, cidade, uf);
 
         Cliente  cliente = new Cliente(nome ,cpf,data,endereco);
+        System.out.println("tipo:");
+        String  tipo = teclado.next();
 
-        Conta conta = new Conta(cliente);
+        Corrente cc = new Corrente(cliente,tipo);
+        Poupanca cp = new Poupanca(
+            cliente,tipo);
 
-        ContasBancarias.add(conta);
+        System.out.println("-----------------------------------------------------------------------");
+        System.out.println("----- opcão 1:  CORRENTE-");
+        System.out.println("----- opção 2:  POUPANÇA---");
+
+
+        System.out.println("->");
+        int tp = teclado.nextInt();
+        if(tp == 1){
+        ContasBancarias.add(cc);
         System.out.println(" conta criada com sucesso!");
-
         operacoes();
-
+        }
+        if(tp == 2){
+            ContasBancarias.add(cp);
+            System.out.println(" conta criada com sucesso!");
+            operacoes();
+        }
      }
     
      private static Conta encontararconta(int numeroConta){
@@ -172,7 +187,7 @@ public class App {
 
      }
 
-     public static void vêcontas(){
+     public static void vecontas(){
         if (ContasBancarias.size()>0){
         for(Conta conta:ContasBancarias){
             System.out.println(conta);
@@ -185,13 +200,4 @@ public class App {
         operacoes();
      }
 
-
-
-
-
-
-
 }
-
-
-

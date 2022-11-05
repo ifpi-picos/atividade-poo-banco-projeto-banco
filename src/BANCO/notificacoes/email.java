@@ -6,10 +6,12 @@ import java.util.Date;
 
 import javax.swing.event.CaretListener;
 
-public class email implements Notificacao { 
+public class Email
+ implements Notificacao { 
     Calendar calendario = Calendar.getInstance();
      Date data = calendario.getTime();
      DateFormat fd = DateFormat.getDateInstance(DateFormat.FULL);
+     
      
      
 

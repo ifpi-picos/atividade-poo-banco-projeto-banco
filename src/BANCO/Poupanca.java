@@ -2,18 +2,31 @@ package BANCO;
 
 public class Poupanca extends Conta {
     private Double rendimento;
-    public Poupanca( Cliente cliente) {
-        super(cliente);
+
+    public Poupanca(Cliente cliente, String tipo) {
+        super(cliente, tipo);
         this.rendimento = 0.10;
     }
+
     public Double getRendimento() {
         return rendimento;
-        
+
     }
+
     @Override
     public void depositar(double depositar) {
-        // TODO Auto-generated method stub
+        
         super.depositar(depositar);
         this.setSaldo(this.getSaldo() * this.getRendimento());
+        
+    }
+
+    @Override
+    public void transfere(Conta numero, double valor) {
+        super.transfere(numero, valor);
+        Double taxa = valor * 5/10;
+        numero.setSaldo(valor + (numero.getSaldo() - taxa));
+
+
     }
 }
