@@ -13,7 +13,7 @@ public class Sms implements Notificacao {
 
     @Override
     public void enviarNoticacao(String operacao, double valor) {
-        System.out.println("enviando um Sms\n"+ operacao +  " no valor de"+ valor + "\n data" + fd.format(data));
+        System.out.println(" enviando um Sms\n "+ operacao +  " no valor de "+ valor + "\n data " + fd.format(data));
         
     }
     

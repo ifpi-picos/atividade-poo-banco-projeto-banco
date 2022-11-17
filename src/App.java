@@ -103,14 +103,18 @@ public class App {
 
         System.out.println("->");
         int tp = teclado.nextInt();
-        if(tp == 1){
+        if(tp == 1 && tipo.equalsIgnoreCase("corrente")){
         ContasBancarias.add(cc);
         System.out.println(" conta criada com sucesso!");
         operacoes();
         }
-        if(tp == 2){
+        if(tp == 2 && tipo.equalsIgnoreCase("poupança")){
             ContasBancarias.add(cp);
             System.out.println(" conta criada com sucesso!");
+            operacoes();
+        }
+        else{
+            System.out.println(" impossivel criar conta!!");
             operacoes();
         }
      }
@@ -201,3 +205,4 @@ public class App {
      }
 
 }
+
