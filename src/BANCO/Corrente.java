@@ -1,13 +1,14 @@
 package BANCO;
 
-import BANCO.notificacoes.Email;
+
+import BANCO.notificacoes.Emaill;
 import BANCO.notificacoes.Sms;
 import java.util.Scanner;
 
 public class Corrente extends Conta  {
     static Scanner teclado = new Scanner(System.in);
     Sms sms = new Sms();
-    Email email = new Email();
+    Emaill email = new Emaill();
     private Double chequeEspecial;
     private int contador;
 

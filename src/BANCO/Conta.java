@@ -2,14 +2,14 @@ package BANCO;
 
 import java.util.Scanner;
 
-import BANCO.notificacoes.Email;
+import BANCO.notificacoes.Emaill;
 import BANCO.notificacoes.Sms;
 
 
 public class Conta {
     static Scanner teclado = new Scanner(System.in);
     Sms sms = new Sms();
-    Email email = new Email();
+    Emaill email = new Emaill();
 
 
     private static int ContasDeContas = 1;
